@@ -6,8 +6,8 @@ export default function SearchBox() {
   const [activeTab, setActiveTab] = useState<"Buy" | "Rent">("Buy");
 
   return (
-    <div className="w-full max-w-5xl rounded-lg bg-white p-3 shadow-2xl">
-      <div className="mb-3 flex gap-2">
+    <div className="w-full max-w-4xl rounded-lg bg-white p-3 shadow-2xl">
+      <div className="mb-2 flex gap-2">
         {(["Buy", "Rent"] as const).map((tab) => (
           <button
             key={tab}
@@ -23,10 +23,10 @@ export default function SearchBox() {
         ))}
       </div>
 
-      <div className="grid gap-2 lg:grid-cols-[1fr_160px_160px_135px]">
+      <div className="grid gap-2 lg:grid-cols-[1fr_150px_150px_125px]">
         <input
           type="text"
-          placeholder="Search location, example: Masaki, Mbezi Beach, Tegeta"
+          placeholder="Search location or property"
           className="rounded-md border border-slate-200 bg-white px-4 py-3 text-sm font-semibold text-[#1E293B] outline-none placeholder:text-slate-400 focus:border-[#008DD2]"
         />
 
