@@ -41,34 +41,53 @@ export default function HomePage() {
     <>
       <Hero />
 
-      <section className="bg-white px-5 py-16">
-        <div className="mx-auto max-w-7xl">
-          <div className="grid gap-6 md:grid-cols-3">
-            {serviceCards.map((card) => (
-              <Link
-                key={card.title}
-                href={card.href}
-                className="group rounded-xl border border-slate-200 bg-white p-7 shadow-sm transition hover:-translate-y-1 hover:shadow-xl"
-              >
-                <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-full bg-[#EAF7FF] text-2xl font-black text-[#0074B7]">
-                  ✓
-                </div>
+      <section className="bg-white px-5 py-20">
+  <div className="mx-auto max-w-7xl">
+    <div className="mb-12 text-center">
+      <p className="font-black uppercase tracking-[0.22em] text-[#0074B7]">
+        What We Offer
+      </p>
 
-                <h2 className="text-2xl font-black text-[#1E293B] group-hover:text-[#0074B7]">
-                  {card.title}
-                </h2>
+      <h2 className="mx-auto mt-4 max-w-3xl text-4xl font-black leading-tight text-[#1E293B] md:text-5xl">
+        Simple property services for buyers, renters and property owners
+      </h2>
 
-                <p className="mt-4 leading-7 text-slate-600">{card.text}</p>
+      <p className="mx-auto mt-5 max-w-2xl text-lg leading-8 text-slate-600">
+        BrightNest Realty gives visitors a clear way to search, compare and
+        inquire about properties without confusion.
+      </p>
+    </div>
 
-                <p className="mt-6 font-black text-[#0074B7]">
-                  Learn More →
-                </p>
-              </Link>
-            ))}
+    <div className="grid gap-7 md:grid-cols-3">
+      {serviceCards.map((card, index) => (
+        <Link
+          key={card.title}
+          href={card.href}
+          className="group rounded-2xl border border-slate-200 bg-white p-8 shadow-sm transition hover:-translate-y-2 hover:border-[#008DD2] hover:shadow-2xl"
+        >
+          <div className="mb-8 flex h-16 w-16 items-center justify-center rounded-2xl bg-[#EAF7FF] text-2xl font-black text-[#0074B7] transition group-hover:bg-[#008DD2] group-hover:text-white">
+            {index + 1}
           </div>
-        </div>
-      </section>
 
+          <h3 className="text-2xl font-black text-[#1E293B] group-hover:text-[#0074B7]">
+            {card.title}
+          </h3>
+
+          <p className="mt-4 min-h-[90px] text-base leading-8 text-slate-600">
+            {card.text}
+          </p>
+
+          <div className="mt-7 flex items-center justify-between border-t border-slate-100 pt-5">
+            <span className="font-black text-[#0074B7]">Learn More</span>
+            <span className="flex h-10 w-10 items-center justify-center rounded-full bg-[#F5F7FA] font-black text-[#0074B7] transition group-hover:bg-[#008DD2] group-hover:text-white">
+              →
+            </span>
+          </div>
+        </Link>
+      ))}
+    </div>
+  </div>
+</section>
       <FeaturedProperties />
 
       <section className="bg-white px-5 py-16">
