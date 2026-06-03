@@ -3,14 +3,14 @@ import SearchBox from "@/components/SearchBox";
 export default function Hero() {
   return (
     <section className="bg-white">
-      <div className="hero-bg flex min-h-[calc(100vh-86px)] items-center px-5 py-8">
+      <div className="hero-bg flex min-h-[calc(100vh-86px)] items-center px-5 py-6">
         <div className="mx-auto w-full max-w-7xl">
-          <div className="max-w-4xl">
-            <p className="mb-3 text-xs font-black uppercase tracking-[0.28em] text-[#8ED8FF]">
+          <div className="max-w-3xl">
+            <p className="mb-3 text-xs font-black uppercase tracking-[0.26em] text-[#8ED8FF]">
               Real Estate Made Simple
             </p>
 
-            <h1 className="max-w-4xl text-4xl font-black leading-[1.05] text-white md:text-5xl lg:text-6xl">
+            <h1 className="max-w-3xl text-4xl font-black leading-[1.05] text-white md:text-5xl xl:text-6xl">
               Find your perfect home, land or investment property
             </h1>
 
@@ -19,7 +19,7 @@ export default function Hero() {
               Salaam and fast-growing locations in Tanzania.
             </p>
 
-            <div className="mt-6">
+            <div className="mt-5">
               <SearchBox />
             </div>
           </div>
