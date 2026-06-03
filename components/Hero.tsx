@@ -10,7 +10,7 @@ export default function Hero() {
               Real Estate Made Simple
             </p>
 
-            <h1 className="max-w-3xl text-4xl font-black leading-[1.05] text-white md:text-5xl xl:text-6xl">
+            <h1 className="max-w-3xl text-4xl font-black leading-[1.08] text-white md:text-5xl xl:text-[56px]">
               Find your perfect home, land or investment property
             </h1>
 
