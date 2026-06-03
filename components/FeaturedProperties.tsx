@@ -14,7 +14,7 @@ export default function FeaturedProperties() {
               Featured Listings
             </p>
 
-            <h2 className="mt-3 text-4xl font-black leading-tight text-[#1E293B] md:text-5xl">
+            <h2 className="mt-3 text-4xl font-black leading-tight text-[#1E293B] md:text-[44px]">
               Latest featured properties
             </h2>
 
