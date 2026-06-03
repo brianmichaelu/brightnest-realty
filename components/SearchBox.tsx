@@ -6,13 +6,13 @@ export default function SearchBox() {
   const [activeTab, setActiveTab] = useState<"Buy" | "Rent">("Buy");
 
   return (
-    <div className="w-full max-w-5xl rounded-lg bg-white p-3 shadow-2xl md:p-4">
+    <div className="w-full max-w-5xl rounded-lg bg-white p-3 shadow-2xl">
       <div className="mb-3 flex gap-2">
         {(["Buy", "Rent"] as const).map((tab) => (
           <button
             key={tab}
             onClick={() => setActiveTab(tab)}
-            className={`rounded-md px-5 py-2.5 text-sm font-black transition ${
+            className={`rounded-md px-5 py-2 text-sm font-black transition ${
               activeTab === tab
                 ? "bg-[#0074B7] text-white"
                 : "bg-[#F5F7FA] text-[#1E293B] hover:bg-[#EAF7FF]"
@@ -23,7 +23,7 @@ export default function SearchBox() {
         ))}
       </div>
 
-      <div className="grid gap-3 lg:grid-cols-[1fr_170px_170px_145px]">
+      <div className="grid gap-2 lg:grid-cols-[1fr_160px_160px_135px]">
         <input
           type="text"
           placeholder="Search location, example: Masaki, Mbezi Beach, Tegeta"
@@ -47,7 +47,7 @@ export default function SearchBox() {
           <option>Above 700M</option>
         </select>
 
-        <button className="rounded-md bg-[#008DD2] px-5 py-3 text-sm font-black text-white transition hover:bg-[#0074B7]">
+        <button className="rounded-md bg-[#008DD2] px-4 py-3 text-sm font-black text-white transition hover:bg-[#0074B7]">
           Search
         </button>
       </div>
