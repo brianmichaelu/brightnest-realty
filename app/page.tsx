@@ -90,7 +90,7 @@ export default function HomePage() {
 </section>
       <FeaturedProperties />
 
-      <section className="bg-white px-5 py-16">
+      <section className="bg-white px-5 py-12">
   <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
     <div>
       <p className="font-black uppercase tracking-[0.22em] text-[#0074B7]">
