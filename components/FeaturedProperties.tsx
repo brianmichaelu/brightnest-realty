@@ -5,21 +5,18 @@ export default function FeaturedProperties() {
   const featured = properties.filter((property) => property.featured);
 
   return (
-    <section className="bg-white px-5 py-20">
+    <section className="bg-[#F5F7FA] px-5 py-16">
       <div className="mx-auto max-w-7xl">
-        <div className="mb-10 flex flex-col justify-between gap-4 md:flex-row md:items-end">
-          <div>
-            <p className="font-black uppercase tracking-[0.25em] text-[#d91c8f]">
-              Featured Listings
-            </p>
-            <h2 className="mt-3 text-4xl font-black text-[#08112f] md:text-5xl">
-              Fresh properties for sale and rent
-            </h2>
-          </div>
-
-          <p className="max-w-xl text-lg font-medium leading-8 text-slate-600">
-            Browse selected homes, apartments, villas and development land with
-            clean details and direct contact options.
+        <div className="mb-10 text-center">
+          <p className="font-black uppercase tracking-[0.25em] text-[#0074B7]">
+            Featured Listings
+          </p>
+          <h2 className="mt-3 text-3xl font-black text-[#1E293B] md:text-4xl">
+            Display Latest & Featured Properties
+          </h2>
+          <p className="mx-auto mt-4 max-w-2xl text-slate-500">
+            Browse selected homes, apartments, villas and land with clear
+            details and direct contact options.
           </p>
         </div>
 

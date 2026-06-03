@@ -7,7 +7,7 @@ export default function WhatsAppButton() {
       href={`https://wa.me/255689824682?text=${encodeURIComponent(message)}`}
       target="_blank"
       rel="noopener noreferrer"
-      className="fixed bottom-5 right-5 z-50 rounded-full bg-[#13d8c3] px-6 py-4 font-black text-[#08112f] shadow-2xl transition hover:scale-105"
+      className="fixed bottom-5 right-5 z-50 rounded-md bg-[#008DD2] px-6 py-4 font-black text-white shadow-2xl transition hover:scale-105 hover:bg-[#0074B7]"
     >
       WhatsApp
     </a>

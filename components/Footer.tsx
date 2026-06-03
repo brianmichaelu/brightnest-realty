@@ -2,19 +2,18 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="bg-[#08112f] px-5 py-14 text-white">
+    <footer className="bg-[#003B5C] px-5 py-12 text-white">
       <div className="mx-auto grid max-w-7xl gap-10 md:grid-cols-4">
         <div className="md:col-span-2">
           <h2 className="text-3xl font-black">BrightNest Realty</h2>
           <p className="mt-4 max-w-xl text-white/70">
             A modern real estate website for showcasing homes, apartments,
-            commercial spaces and land with bright visuals and simple contact
-            options.
+            commercial spaces and land with simple contact options.
           </p>
         </div>
 
         <div>
-          <h3 className="font-black text-[#e7ff3c]">Pages</h3>
+          <h3 className="font-black text-[#8ED8FF]">Pages</h3>
           <div className="mt-4 flex flex-col gap-3 text-white/75">
             <Link href="/">Home</Link>
             <Link href="/properties">Properties</Link>
@@ -24,7 +23,7 @@ export default function Footer() {
         </div>
 
         <div>
-          <h3 className="font-black text-[#e7ff3c]">Contact</h3>
+          <h3 className="font-black text-[#8ED8FF]">Contact</h3>
           <div className="mt-4 flex flex-col gap-3 text-white/75">
             <a href="mailto:lubrun.enterprises@gmail.com">
               lubrun.enterprises@gmail.com
