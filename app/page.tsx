@@ -91,54 +91,82 @@ export default function HomePage() {
       <FeaturedProperties />
 
       <section className="bg-white px-5 py-16">
-        <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
-          <div>
-            <p className="font-black uppercase tracking-[0.22em] text-[#0074B7]">
-              Why Choose Us
-            </p>
+  <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+    <div>
+      <p className="font-black uppercase tracking-[0.22em] text-[#0074B7]">
+        Why Choose Us
+      </p>
 
-            <h2 className="mt-4 text-4xl font-black leading-tight text-[#1E293B] md:text-5xl">
-              A modern real estate experience built for serious property
-              inquiries.
-            </h2>
+      <h2 className="mt-4 text-3xl font-black leading-tight text-[#1E293B] md:text-5xl">
+        A smarter way to discover and present real estate.
+      </h2>
 
-            <p className="mt-6 text-lg leading-8 text-slate-600">
-              BrightNest Realty helps visitors quickly discover properties,
-              compare options and contact you directly through WhatsApp or
-              email. This home page is designed to feel professional, clean and
-              ready for a real estate client.
-            </p>
+      <p className="mt-6 text-lg leading-8 text-slate-600">
+        BrightNest Realty is built to help buyers, renters and property owners
+        connect faster through a clean property search experience, professional
+        listing cards and direct inquiry options.
+      </p>
 
-            <Link
-              href="/contact"
-              className="mt-8 inline-flex rounded-md bg-[#008DD2] px-7 py-4 font-black text-white transition hover:bg-[#0074B7]"
-            >
-              Contact Us
-            </Link>
+      <div className="mt-8 flex flex-col gap-4 sm:flex-row">
+        <a
+          href="https://wa.me/255689824682?text=Hello BrightNest Realty, I would like to ask about your properties."
+          target="_blank"
+          rel="noopener noreferrer"
+          className="rounded-md bg-[#008DD2] px-7 py-4 text-center font-black text-white transition hover:bg-[#0074B7]"
+        >
+          Talk to Us
+        </a>
+
+        <Link
+          href="/properties"
+          className="rounded-md border border-slate-300 px-7 py-4 text-center font-black text-[#003B5C] transition hover:border-[#008DD2] hover:text-[#008DD2]"
+        >
+          Browse Listings
+        </Link>
+      </div>
+    </div>
+
+    <div className="grid gap-5 sm:grid-cols-2">
+      {[
+        {
+          number: "01",
+          title: "Easy Property Search",
+          text: "Visitors can quickly search by location, property type and budget to find suitable homes, land or commercial spaces.",
+        },
+        {
+          number: "02",
+          title: "Professional Listings",
+          text: "Each property is presented with clear photos, price, location, size and key features to build trust with serious clients.",
+        },
+        {
+          number: "03",
+          title: "Direct Inquiries",
+          text: "WhatsApp and email contact options make it easy for interested buyers or tenants to reach out immediately.",
+        },
+        {
+          number: "04",
+          title: "Mobile-Friendly Design",
+          text: "The website is designed to look clean and easy to use on phones, tablets and desktop screens.",
+        },
+      ].map((item) => (
+        <div
+          key={item.title}
+          className="rounded-2xl border border-slate-200 bg-[#F5F7FA] p-7 transition hover:-translate-y-1 hover:bg-white hover:shadow-xl"
+        >
+          <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-full bg-[#008DD2] text-sm font-black text-white">
+            {item.number}
           </div>
 
-          <div className="grid gap-5 sm:grid-cols-2">
-            {[
-              "Clean property search experience",
-              "Professional property cards",
-              "Direct WhatsApp inquiries",
-              "Mobile-friendly layout",
-            ].map((item) => (
-              <div
-                key={item}
-                className="rounded-xl border border-slate-200 bg-[#F5F7FA] p-7"
-              >
-                <div className="mb-5 h-12 w-12 rounded-full bg-[#008DD2]" />
-                <h3 className="text-xl font-black text-[#1E293B]">{item}</h3>
-                <p className="mt-3 leading-7 text-slate-600">
-                  Placeholder text for this feature. You can replace this with
-                  client-specific details later.
-                </p>
-              </div>
-            ))}
-          </div>
+          <h3 className="text-xl font-black leading-tight text-[#1E293B]">
+            {item.title}
+          </h3>
+
+          <p className="mt-4 leading-7 text-slate-600">{item.text}</p>
         </div>
-      </section>
+      ))}
+    </div>
+  </div>
+</section>
 
       <section className="bg-[#003B5C] px-5 py-14 text-white">
         <div className="mx-auto grid max-w-7xl gap-6 sm:grid-cols-2 lg:grid-cols-4">
