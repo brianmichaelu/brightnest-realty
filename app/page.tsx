@@ -97,7 +97,7 @@ export default function HomePage() {
         Why Choose Us
       </p>
 
-      <h2 className="mt-4 text-3xl font-black leading-tight text-[#1E293B] md:text-5xl">
+      <h2 className="mt-4 text-3xl font-black leading-tight text-[#1E293B] md:text-[44px]">
         A smarter way to discover and present real estate.
       </h2>
 
