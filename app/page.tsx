@@ -182,35 +182,50 @@ export default function HomePage() {
       </section>
 
       <section className="bg-[#F5F7FA] px-5 py-16">
-        <div className="mx-auto max-w-7xl">
-          <div className="mb-10 text-center">
-            <p className="font-black uppercase tracking-[0.22em] text-[#0074B7]">
-              Popular Locations
-            </p>
+  <div className="mx-auto max-w-7xl">
+    <div className="mb-10 text-center">
+      <p className="font-black uppercase tracking-[0.22em] text-[#0074B7]">
+        Popular Locations
+      </p>
 
-            <h2 className="mt-4 text-4xl font-black text-[#1E293B]">
-              Explore properties by location
-            </h2>
+      <h2 className="mt-4 text-4xl font-black text-[#1E293B] md:text-[44px]">
+        Explore properties by location
+      </h2>
 
-            <p className="mx-auto mt-4 max-w-2xl leading-7 text-slate-600">
-              These are placeholder locations. You can update them based on the
-              client’s actual service areas.
-            </p>
-          </div>
+      <p className="mx-auto mt-4 max-w-2xl leading-7 text-slate-600">
+        Browse homes, apartments, land and commercial spaces in some of the
+        most requested areas across Dar es Salaam and nearby growing locations.
+      </p>
+    </div>
 
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {locations.map((location) => (
-              <Link
-                key={location}
-                href="/properties"
-                className="rounded-xl bg-white p-6 font-black text-[#1E293B] shadow-sm transition hover:-translate-y-1 hover:text-[#0074B7] hover:shadow-xl"
-              >
-                Properties in {location} →
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
+    <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      {locations.map((location) => (
+        <Link
+          key={location}
+          href="/properties"
+          className="group rounded-xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:border-[#008DD2] hover:shadow-xl"
+        >
+          <p className="text-sm font-black uppercase tracking-[0.18em] text-[#0074B7]">
+            Location
+          </p>
+
+          <h3 className="mt-3 text-2xl font-black text-[#1E293B] group-hover:text-[#0074B7]">
+            {location}
+          </h3>
+
+          <p className="mt-3 leading-7 text-slate-600">
+            View available houses, apartments and investment properties in this
+            area.
+          </p>
+
+          <p className="mt-5 font-black text-[#0074B7]">
+            Explore listings →
+          </p>
+        </Link>
+      ))}
+    </div>
+  </div>
+</section>
 
       <section className="bg-white px-5 py-16">
         <div className="mx-auto max-w-7xl overflow-hidden rounded-2xl bg-[#003B5C] px-8 py-14 text-center text-white md:px-14">
