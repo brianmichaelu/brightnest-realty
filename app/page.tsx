@@ -41,18 +41,18 @@ export default function HomePage() {
     <>
       <Hero />
 
-      <section className="bg-white px-5 py-14">
+      <section className="bg-white px-5 py-12">
   <div className="mx-auto max-w-7xl">
     <div className="mb-10 text-center">
       <p className="font-black uppercase tracking-[0.22em] text-[#0074B7]">
         What We Offer
       </p>
 
-      <h2 className="mx-auto mt-4 max-w-4xl text-3xl font-black leading-tight text-[#1E293B] md:text-5xl">
+      <h2 className="mx-auto mt-3 max-w-3xl text-3xl font-black leading-tight text-[#1E293B] md:text-4xl">
         Simple property services for buyers, renters and property owners
       </h2>
 
-      <p className="mx-auto mt-5 max-w-2xl text-lg leading-8 text-slate-600">
+      <p className="mx-auto mt-4 max-w-2xl text-base leading-7 text-slate-600">
         BrightNest Realty gives visitors a clear way to search, compare and
         inquire about properties without confusion.
       </p>
