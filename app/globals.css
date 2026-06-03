@@ -1,26 +1,44 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --navy: #08112f;
+  --lime: #e7ff3c;
+  --pink: #d91c8f;
+  --cyan: #13d8c3;
+  --orange: #ff8a00;
+  --cream: #fffbea;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+* {
+  box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
+  margin: 0;
+  background: #ffffff;
+  color: #08112f;
   font-family: Arial, Helvetica, sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+.hero-bg {
+  background-image:
+    linear-gradient(rgba(8, 17, 47, 0.35), rgba(8, 17, 47, 0.45)),
+    url("/images/hero-real-estate.png");
+  background-size: cover;
+  background-position: center;
 }
