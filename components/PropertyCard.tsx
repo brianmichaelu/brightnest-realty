@@ -2,9 +2,20 @@ import Image from "next/image";
 import Link from "next/link";
 import type { Property } from "@/data/properties";
 
+function getPropertyFeatures(property: Property) {
+  if (property.type === "Land") {
+    return ["Plot", "Development", property.size];
+  }
+
+  if (property.type === "Commercial") {
+    return ["Open Plan", `${property.baths} Baths`, property.size];
+  }
+
+  return [`${property.beds} Beds`, `${property.baths} Baths`, property.size];
+}
+
 export default function PropertyCard({ property }: { property: Property }) {
-  const hasBeds = property.beds > 0;
-  const hasBaths = property.baths > 0;
+  const features = getPropertyFeatures(property);
 
   return (
     <article className="group overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-xl">
@@ -42,23 +53,20 @@ export default function PropertyCard({ property }: { property: Property }) {
         </p>
 
         <div className="mt-4 grid grid-cols-3 gap-2 text-center text-xs font-bold text-slate-600">
-          <span className="rounded-md bg-[#F5F7FA] px-2 py-2">
-            {hasBeds ? `${property.beds} Beds` : "N/A"}
-          </span>
-
-          <span className="rounded-md bg-[#F5F7FA] px-2 py-2">
-            {hasBaths ? `${property.baths} Baths` : "N/A"}
-          </span>
-
-          <span className="rounded-md bg-[#F5F7FA] px-2 py-2">
-            {property.size}
-          </span>
+          {features.map((feature) => (
+            <span
+              key={feature}
+              className="rounded-md bg-[#F5F7FA] px-2 py-2"
+            >
+              {feature}
+            </span>
+          ))}
         </div>
 
         <Link
-  href={`/properties/${property.id}`}
-  className="mt-4 inline-flex w-full justify-center rounded-md bg-[#003B5C] px-5 py-2.5 text-center text-sm font-black text-white transition hover:bg-[#008DD2]"
->
+          href={`/properties/${property.id}`}
+          className="mt-4 inline-flex w-full justify-center rounded-md bg-[#003B5C] px-5 py-2.5 text-center text-sm font-black text-white transition hover:bg-[#008DD2]"
+        >
           View Details
         </Link>
       </div>
