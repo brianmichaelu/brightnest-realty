@@ -8,7 +8,7 @@ export default function PropertyCard({ property }: { property: Property }) {
 
   return (
     <article className="group overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-xl">
-      <div className="relative h-48 overflow-hidden">
+      <div className="relative h-40 overflow-hidden">
         <Image
           src={property.image}
           alt={property.title}
@@ -24,12 +24,12 @@ export default function PropertyCard({ property }: { property: Property }) {
         </div>
       </div>
 
-      <div className="p-5">
+      <div className="p-4">
         <p className="text-xs font-black uppercase tracking-[0.18em] text-[#0074B7]">
           {property.type}
         </p>
 
-        <h3 className="mt-2 min-h-[60px] text-xl font-black leading-tight text-[#1E293B]">
+        <h3 className="mt-2 min-h-[52px] text-lg font-black leading-tight text-[#1E293B]">
           {property.title}
         </h3>
 
@@ -37,7 +37,7 @@ export default function PropertyCard({ property }: { property: Property }) {
           {property.location}
         </p>
 
-        <p className="mt-3 text-xl font-black text-[#0074B7]">
+        <p className="mt-3 text-lg font-black text-[#0074B7]">
           {property.price}
         </p>
 
@@ -56,9 +56,9 @@ export default function PropertyCard({ property }: { property: Property }) {
         </div>
 
         <Link
-          href={`/properties/${property.id}`}
-          className="mt-4 inline-flex w-full justify-center rounded-md bg-[#003B5C] px-5 py-3 text-center text-sm font-black text-white transition hover:bg-[#008DD2]"
-        >
+  href={`/properties/${property.id}`}
+  className="mt-4 inline-flex w-full justify-center rounded-md bg-[#003B5C] px-5 py-2.5 text-center text-sm font-black text-white transition hover:bg-[#008DD2]"
+>
           View Details
         </Link>
       </div>
