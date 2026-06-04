@@ -1,18 +1,21 @@
 "use client";
 
-import { FormEvent, useState } from "react";
-import { useSearchParams } from "next/navigation";
+import { FormEvent, useEffect, useState } from "react";
 
 export default function ContactPage() {
-  const searchParams = useSearchParams();
-  const requestType = searchParams.get("type");
+ const [defaultInquiryType, setDefaultInquiryType] = useState("I want to buy");
+const [inquiryType, setInquiryType] = useState("I want to buy");
 
-  const defaultInquiryType =
-    requestType === "list-property"
-      ? "I want to list my property"
-      : "I want to buy";
+useEffect(() => {
+  const params = new URLSearchParams(window.location.search);
+  const requestType = params.get("type");
 
-  const [inquiryType, setInquiryType] = useState(defaultInquiryType);
+  if (requestType === "list-property") {
+    setDefaultInquiryType("I want to list my property");
+    setInquiryType("I want to list my property");
+  }
+}, []);
+  
   const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">(
     "idle"
   );
