@@ -1,8 +1,18 @@
 "use client";
 
 import { FormEvent, useState } from "react";
+import { useSearchParams } from "next/navigation";
 
 export default function ContactPage() {
+  const searchParams = useSearchParams();
+  const requestType = searchParams.get("type");
+
+  const defaultInquiryType =
+    requestType === "list-property"
+      ? "I want to list my property"
+      : "I want to buy";
+
+  const [inquiryType, setInquiryType] = useState(defaultInquiryType);
   const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">(
     "idle"
   );
@@ -28,6 +38,7 @@ export default function ContactPage() {
       }
 
       form.reset();
+      setInquiryType(defaultInquiryType);
       setStatus("success");
     } catch {
       setStatus("error");
@@ -115,7 +126,11 @@ export default function ContactPage() {
           <input
             type="hidden"
             name="_subject"
-            value="New BrightNest Realty Inquiry"
+            value={
+              inquiryType === "I want to list my property"
+                ? "New BrightNest Property Listing Request"
+                : "New BrightNest Realty Inquiry"
+            }
           />
 
           <div className="grid gap-5">
@@ -144,6 +159,8 @@ export default function ContactPage() {
 
             <select
               name="inquiryType"
+              value={inquiryType}
+              onChange={(event) => setInquiryType(event.target.value)}
               className="rounded-md border border-slate-200 bg-white px-5 py-4 font-semibold text-[#1E293B] outline-none focus:border-[#008DD2]"
             >
               <option>I want to buy</option>
@@ -152,10 +169,39 @@ export default function ContactPage() {
               <option>I need more information</option>
             </select>
 
+            {inquiryType === "I want to list my property" && (
+              <>
+                <input
+                  type="text"
+                  name="propertyLocation"
+                  placeholder="Property location, example: Masaki, Tegeta, Bagamoyo"
+                  className="rounded-md border border-slate-200 bg-white px-5 py-4 font-semibold text-[#1E293B] outline-none placeholder:text-slate-400 focus:border-[#008DD2]"
+                />
+
+                <input
+                  type="text"
+                  name="propertyType"
+                  placeholder="Property type, example: House, Apartment, Land"
+                  className="rounded-md border border-slate-200 bg-white px-5 py-4 font-semibold text-[#1E293B] outline-none placeholder:text-slate-400 focus:border-[#008DD2]"
+                />
+
+                <input
+                  type="text"
+                  name="expectedPrice"
+                  placeholder="Expected price or rent"
+                  className="rounded-md border border-slate-200 bg-white px-5 py-4 font-semibold text-[#1E293B] outline-none placeholder:text-slate-400 focus:border-[#008DD2]"
+                />
+              </>
+            )}
+
             <textarea
               name="message"
               rows={6}
-              placeholder="Write your message"
+              placeholder={
+                inquiryType === "I want to list my property"
+                  ? "Tell us about the property you want to list"
+                  : "Write your message"
+              }
               required
               className="rounded-md border border-slate-200 bg-white px-5 py-4 font-semibold text-[#1E293B] outline-none placeholder:text-slate-400 focus:border-[#008DD2]"
             />
