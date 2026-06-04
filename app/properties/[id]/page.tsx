@@ -49,7 +49,7 @@ export default async function PropertyDetailsPage({ params }: PageProps) {
   const message = `Hello BrightNest Realty, I am interested in this property: ${property.title} - ${property.location}`;
 
   return (
-    <section className="bg-white px-5 py-10">
+    <section className="bg-white px-5 pb-10 pt-20">
       <div className="mx-auto max-w-7xl">
         <Link
           href="/properties"
@@ -60,7 +60,7 @@ export default async function PropertyDetailsPage({ params }: PageProps) {
 
         <div className="grid gap-10 lg:grid-cols-[1.35fr_0.65fr]">
           <div>
-            <div className="relative h-[420px] overflow-hidden rounded-2xl shadow-sm md:h-[500px]">
+            <div className="relative h-[380px] overflow-hidden rounded-2xl shadow-sm md:h-[460px]">
               <Image
                 src={property.image}
                 alt={property.title}
