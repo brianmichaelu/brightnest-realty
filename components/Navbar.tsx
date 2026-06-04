@@ -85,7 +85,7 @@ export default function Navbar() {
         </div>
 
         <Link
-          href="/contact"
+          href="/contact?type=list-property"
           className="hidden rounded-md bg-[#008DD2] px-5 py-2.5 text-sm font-black text-white transition hover:bg-white hover:text-[#003B5C] lg:inline-flex"
         >
           List Property
@@ -113,6 +113,13 @@ export default function Navbar() {
             </Link>
             <Link onClick={() => setMobileOpen(false)} href="/contact">
               Contact
+            </Link>
+            <Link
+              onClick={() => setMobileOpen(false)}
+              href="/contact?type=list-property"
+              className="rounded-md bg-[#008DD2] px-4 py-3 text-center font-black text-white"
+            >
+              List Property
             </Link>
           </div>
         </div>
