@@ -5,7 +5,7 @@ export default function PropertiesPage() {
   return (
     <section className="bg-white px-5 py-10">
       <div className="mx-auto max-w-7xl">
-        <div className="mb-10 rounded-2xl bg-[#003B5C] p-6 text-white shadow-lg md:p-8">
+        <div className="properties-hero-slideshow mb-10 rounded-2xl p-6 text-white shadow-lg md:p-8">
   <p className="font-black uppercase tracking-[0.25em] text-[#8ED8FF]">
     Browse Properties
   </p>
