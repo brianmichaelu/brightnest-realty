@@ -24,14 +24,14 @@ const stats = [
 export default function AboutPage() {
   return (
     <>
-      <section className="bg-white px-5 py-14">
+      <section className="bg-white px-5 py-10">
         <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[1fr_0.9fr] lg:items-center">
           <div>
             <p className="font-black uppercase tracking-[0.25em] text-[#0074B7]">
               About BrightNest
             </p>
 
-            <h1 className="mt-4 max-w-4xl text-4xl font-black leading-tight text-[#1E293B] md:text-[52px]">
+            <h1 className="mt-4 max-w-4xl text-4xl font-black leading-tight text-[#1E293B] md:text-[46px]">
               A modern real estate platform built for trusted property
               discovery.
             </h1>
@@ -61,7 +61,7 @@ export default function AboutPage() {
             </div>
           </div>
 
-          <div className="rounded-2xl bg-[#003B5C] p-8 text-white shadow-lg">
+          <div className="rounded-2xl bg-[#003B5C] p-7 text-white shadow-lg">
             <p className="font-black uppercase tracking-[0.22em] text-[#8ED8FF]">
               Our Focus
             </p>
