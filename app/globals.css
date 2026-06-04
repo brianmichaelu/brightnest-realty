@@ -65,7 +65,7 @@ textarea {
   inset: 0;
   z-index: -1;
   background:
-    linear-gradient(90deg, rgba(0, 59, 92, 0.92), rgba(0, 59, 92, 0.72)),
+    linear-gradient(90deg, rgba(0, 59, 92, 0.86), rgba(0, 59, 92, 0.62)),
     linear-gradient(rgba(0, 59, 92, 0.35), rgba(0, 59, 92, 0.35));
 }
 
