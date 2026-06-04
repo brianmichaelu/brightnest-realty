@@ -10,7 +10,7 @@ export default function PropertiesPage() {
     Browse Properties
   </p>
 
-  <h1 className="mt-4 max-w-4xl text-4xl font-black leading-tight md:text-5xl">
+  <h1 className="mt-4 max-w-4xl text-4xl font-black leading-tight md:text-[44px]">
     Find properties for sale and rent
   </h1>
 
