@@ -4,10 +4,31 @@ import { useEffect, useMemo, useState } from "react";
 import PropertyCard from "@/components/PropertyCard";
 import { properties } from "@/data/properties";
 
+const locationSuggestions = [
+  "Masaki",
+  "Oysterbay",
+  "Kinondoni",
+  "Sinza",
+  "Mbezi Beach",
+  "Kunduchi",
+  "Tegeta",
+  "Goba",
+  "Salasala",
+  "Kigamboni",
+  "Upanga",
+  "City Centre",
+  "Bagamoyo",
+  "Skanska",
+];
+
 export default function PropertiesPage() {
   const [locationSearch, setLocationSearch] = useState("");
   const [propertyType, setPropertyType] = useState("Any Type");
   const [propertyStatus, setPropertyStatus] = useState("Any Status");
+
+  const [appliedLocation, setAppliedLocation] = useState("");
+  const [appliedType, setAppliedType] = useState("Any Type");
+  const [appliedStatus, setAppliedStatus] = useState("Any Status");
 
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
@@ -16,6 +37,7 @@ export default function PropertiesPage() {
 
     if (status === "For Sale" || status === "For Rent") {
       setPropertyStatus(status);
+      setAppliedStatus(status);
     }
 
     if (
@@ -26,33 +48,51 @@ export default function PropertiesPage() {
       type === "Commercial"
     ) {
       setPropertyType(type);
+      setAppliedType(type);
     }
   }, []);
 
   const filteredProperties = useMemo(() => {
     return properties.filter((property) => {
+      const search = appliedLocation.toLowerCase().trim();
+
       const matchesLocation =
-        locationSearch.trim() === "" ||
-        property.location.toLowerCase().includes(locationSearch.toLowerCase()) ||
-        property.title.toLowerCase().includes(locationSearch.toLowerCase());
+        search === "" ||
+        property.location.toLowerCase().includes(search) ||
+        property.title.toLowerCase().includes(search);
 
       const matchesType =
-        propertyType === "Any Type" || property.type === propertyType;
+        appliedType === "Any Type" || property.type === appliedType;
 
       const matchesStatus =
-        propertyStatus === "Any Status" || property.status === propertyStatus;
+        appliedStatus === "Any Status" || property.status === appliedStatus;
 
       return matchesLocation && matchesType && matchesStatus;
     });
-  }, [locationSearch, propertyType, propertyStatus]);
+  }, [appliedLocation, appliedType, appliedStatus]);
+
+  function applyFilters() {
+    setAppliedLocation(locationSearch);
+    setAppliedType(propertyType);
+    setAppliedStatus(propertyStatus);
+  }
 
   function clearFilters() {
     setLocationSearch("");
     setPropertyType("Any Type");
     setPropertyStatus("Any Status");
 
+    setAppliedLocation("");
+    setAppliedType("Any Type");
+    setAppliedStatus("Any Status");
+
     window.history.replaceState(null, "", "/properties");
   }
+
+  const filtersActive =
+    appliedLocation ||
+    appliedType !== "Any Type" ||
+    appliedStatus !== "Any Status";
 
   return (
     <section className="bg-white px-5 py-10">
@@ -72,12 +112,21 @@ export default function PropertiesPage() {
           </p>
 
           <div className="mt-6 grid gap-3 rounded-xl bg-white p-4 md:grid-cols-[1fr_180px_180px_130px]">
-            <input
-              value={locationSearch}
-              onChange={(event) => setLocationSearch(event.target.value)}
-              placeholder="Search location"
-              className="rounded-md border border-slate-200 bg-white px-4 py-3 font-bold text-[#1E293B] outline-none placeholder:text-slate-400 focus:border-[#008DD2]"
-            />
+            <div>
+              <input
+                value={locationSearch}
+                onChange={(event) => setLocationSearch(event.target.value)}
+                list="property-locations"
+                placeholder="Search location, example: Masaki"
+                className="w-full rounded-md border border-slate-200 bg-white px-4 py-3 font-bold text-[#1E293B] outline-none placeholder:text-slate-400 focus:border-[#008DD2]"
+              />
+
+              <datalist id="property-locations">
+                {locationSuggestions.map((location) => (
+                  <option key={location} value={location} />
+                ))}
+              </datalist>
+            </div>
 
             <select
               value={propertyType}
@@ -104,11 +153,27 @@ export default function PropertiesPage() {
 
             <button
               type="button"
-              onClick={clearFilters}
+              onClick={applyFilters}
               className="rounded-md bg-[#008DD2] px-5 py-3 font-black text-white transition hover:bg-[#0074B7]"
             >
-              Clear
+              Filter
             </button>
+          </div>
+
+          <div className="mt-4 flex flex-wrap gap-2">
+            {locationSuggestions.slice(0, 8).map((location) => (
+              <button
+                key={location}
+                type="button"
+                onClick={() => {
+                  setLocationSearch(location);
+                  setAppliedLocation(location);
+                }}
+                className="rounded-full bg-white/15 px-4 py-2 text-sm font-bold text-white backdrop-blur transition hover:bg-white hover:text-[#003B5C]"
+              >
+                {location}
+              </button>
+            ))}
           </div>
         </div>
 
@@ -121,19 +186,17 @@ export default function PropertiesPage() {
             </p>
 
             <p className="mt-1 text-sm font-semibold text-slate-500">
-              Use the filters above to narrow your search.
+              Search by location, property name, type or sale/rent status.
             </p>
           </div>
 
-          {(locationSearch ||
-            propertyType !== "Any Type" ||
-            propertyStatus !== "Any Status") && (
+          {filtersActive && (
             <button
               type="button"
               onClick={clearFilters}
               className="rounded-md border border-slate-300 px-5 py-3 text-sm font-black text-[#003B5C] transition hover:border-[#008DD2] hover:text-[#008DD2]"
             >
-              Reset Filters
+              Clear Filters
             </button>
           )}
         </div>
@@ -151,8 +214,8 @@ export default function PropertiesPage() {
             </h2>
 
             <p className="mx-auto mt-4 max-w-xl leading-7 text-slate-600">
-              Try changing the location, property type or status to see more
-              available listings.
+              Try searching another location such as Masaki, Mbezi Beach,
+              Tegeta, Kunduchi, Bagamoyo or City Centre.
             </p>
 
             <button
