@@ -57,7 +57,7 @@ export default function ContactPage() {
           </div>
         </div>
 
-        <form className="rounded-2xl border border-slate-200 bg-[#F5F7FA] p-6 shadow-sm md:p-8">
+        <form   action="https://formspree.io/f/xojzqrng"   method="POST"   className="rounded-2xl border border-slate-200 bg-[#F5F7FA] p-6 shadow-sm md:p-8" >
           <div className="mb-7">
             <p className="font-black uppercase tracking-[0.22em] text-[#0074B7]">
               Send Inquiry
@@ -73,36 +73,53 @@ export default function ContactPage() {
           </div>
 
           <div className="grid gap-5">
-            <input
-              type="text"
-              placeholder="Your name"
-              className="rounded-md border border-slate-200 bg-white px-5 py-4 font-semibold text-[#1E293B] outline-none placeholder:text-slate-400 focus:border-[#008DD2]"
-            />
 
             <input
-              type="email"
-              placeholder="Your email"
-              className="rounded-md border border-slate-200 bg-white px-5 py-4 font-semibold text-[#1E293B] outline-none placeholder:text-slate-400 focus:border-[#008DD2]"
-            />
-
+  type="hidden"
+  name="_subject"
+  value="New BrightNest Realty Inquiry"
+/>
+            
             <input
-              type="text"
-              placeholder="Phone number"
-              className="rounded-md border border-slate-200 bg-white px-5 py-4 font-semibold text-[#1E293B] outline-none placeholder:text-slate-400 focus:border-[#008DD2]"
-            />
+  type="text"
+  name="name"
+  placeholder="Your name"
+  required
+  className="rounded-md border border-slate-200 bg-white px-5 py-4 font-semibold text-[#1E293B] outline-none placeholder:text-slate-400 focus:border-[#008DD2]"
+/>
 
-            <select className="rounded-md border border-slate-200 bg-white px-5 py-4 font-semibold text-[#1E293B] outline-none focus:border-[#008DD2]">
-              <option>I want to buy</option>
-              <option>I want to rent</option>
-              <option>I want to list my property</option>
-              <option>I need more information</option>
-            </select>
+<input
+  type="email"
+  name="email"
+  placeholder="Your email"
+  required
+  className="rounded-md border border-slate-200 bg-white px-5 py-4 font-semibold text-[#1E293B] outline-none placeholder:text-slate-400 focus:border-[#008DD2]"
+/>
 
-            <textarea
-              rows={6}
-              placeholder="Write your message"
-              className="rounded-md border border-slate-200 bg-white px-5 py-4 font-semibold text-[#1E293B] outline-none placeholder:text-slate-400 focus:border-[#008DD2]"
-            />
+<input
+  type="text"
+  name="phone"
+  placeholder="Phone number"
+  className="rounded-md border border-slate-200 bg-white px-5 py-4 font-semibold text-[#1E293B] outline-none placeholder:text-slate-400 focus:border-[#008DD2]"
+/>
+
+<select
+  name="inquiryType"
+  className="rounded-md border border-slate-200 bg-white px-5 py-4 font-semibold text-[#1E293B] outline-none focus:border-[#008DD2]"
+>
+  <option>I want to buy</option>
+  <option>I want to rent</option>
+  <option>I want to list my property</option>
+  <option>I need more information</option>
+</select>
+
+<textarea
+  name="message"
+  rows={6}
+  placeholder="Write your message"
+  required
+  className="rounded-md border border-slate-200 bg-white px-5 py-4 font-semibold text-[#1E293B] outline-none placeholder:text-slate-400 focus:border-[#008DD2]"
+/>
 
             <button
               type="submit"
