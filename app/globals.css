@@ -42,3 +42,46 @@ textarea {
   background-size: cover;
   background-position: center;
 }
+
+.properties-hero-slideshow {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.properties-hero-slideshow::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  background-size: cover;
+  background-position: center;
+  animation: propertiesHeroSlide 18s infinite;
+}
+
+.properties-hero-slideshow::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    linear-gradient(90deg, rgba(0, 59, 92, 0.92), rgba(0, 59, 92, 0.72)),
+    linear-gradient(rgba(0, 59, 92, 0.35), rgba(0, 59, 92, 0.35));
+}
+
+@keyframes propertiesHeroSlide {
+  0%,
+  30% {
+    background-image: url("/images/property-1.png");
+  }
+
+  33%,
+  63% {
+    background-image: url("/images/property-2.png");
+  }
+
+  66%,
+  100% {
+    background-image: url("/images/property-3.png");
+  }
+}
