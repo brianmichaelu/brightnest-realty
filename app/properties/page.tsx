@@ -31,26 +31,32 @@ export default function PropertiesPage() {
   const [appliedStatus, setAppliedStatus] = useState("Any Status");
 
   useEffect(() => {
-    const params = new URLSearchParams(window.location.search);
-    const status = params.get("status");
-    const type = params.get("type");
+  const params = new URLSearchParams(window.location.search);
+  const status = params.get("status");
+  const type = params.get("type");
+  const location = params.get("location");
 
-    if (status === "For Sale" || status === "For Rent") {
-      setPropertyStatus(status);
-      setAppliedStatus(status);
-    }
+  if (location) {
+    setLocationSearch(location);
+    setAppliedLocation(location);
+  }
 
-    if (
-      type === "House" ||
-      type === "Apartment" ||
-      type === "Villa" ||
-      type === "Land" ||
-      type === "Commercial"
-    ) {
-      setPropertyType(type);
-      setAppliedType(type);
-    }
-  }, []);
+  if (status === "For Sale" || status === "For Rent") {
+    setPropertyStatus(status);
+    setAppliedStatus(status);
+  }
+
+  if (
+    type === "House" ||
+    type === "Apartment" ||
+    type === "Villa" ||
+    type === "Land" ||
+    type === "Commercial"
+  ) {
+    setPropertyType(type);
+    setAppliedType(type);
+  }
+}, []);
 
   const filteredProperties = useMemo(() => {
     return properties.filter((property) => {
