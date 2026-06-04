@@ -3,23 +3,23 @@ import SearchBox from "@/components/SearchBox";
 export default function Hero() {
   return (
     <section className="bg-white">
-      <div className="hero-bg min-h-[620px] px-5 py-24">
-        <div className="mx-auto max-w-7xl">
+      <div className="hero-bg flex min-h-[calc(100vh-86px)] items-center px-5 py-6">
+        <div className="mx-auto w-full max-w-7xl">
           <div className="max-w-3xl">
-            <p className="mb-4 text-sm font-black uppercase tracking-[0.2em] text-[#8ED8FF]">
+            <p className="mb-3 text-xs font-black uppercase tracking-[0.26em] text-[#8ED8FF]">
               Real Estate Made Simple
             </p>
 
-            <h1 className="text-4xl font-black leading-tight text-white md:text-6xl">
-              Believe in finding the perfect home, land or investment space
+            <h1 className="max-w-3xl text-4xl font-black leading-[1.08] text-white md:text-5xl xl:text-[56px]">
+              Find your perfect home, land or investment property
             </h1>
 
-            <p className="mt-5 max-w-2xl text-lg font-semibold leading-8 text-white/90">
-              Explore modern and trusted property listings for sale and rent
-              across Dar es Salaam and growing locations in Tanzania.
+            <p className="mt-4 max-w-2xl text-base font-semibold leading-7 text-white/90">
+              Browse trusted property listings for sale and rent across Dar es
+              Salaam and fast-growing locations in Tanzania.
             </p>
 
-            <div className="mt-10">
+            <div className="mt-5">
               <SearchBox />
             </div>
           </div>

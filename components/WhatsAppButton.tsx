@@ -7,9 +7,10 @@ export default function WhatsAppButton() {
       href={`https://wa.me/255689824682?text=${encodeURIComponent(message)}`}
       target="_blank"
       rel="noopener noreferrer"
-      className="fixed bottom-5 right-5 z-50 rounded-md bg-[#008DD2] px-6 py-4 font-black text-white shadow-2xl transition hover:scale-105 hover:bg-[#0074B7]"
+      aria-label="Chat on WhatsApp"
+      className="fixed bottom-5 right-5 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-[#008DD2] text-xl font-black text-white shadow-2xl transition hover:scale-105 hover:bg-[#0074B7]"
     >
-      WhatsApp
+      W
     </a>
   );
 }
