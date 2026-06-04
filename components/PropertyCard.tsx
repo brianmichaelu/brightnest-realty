@@ -8,7 +8,7 @@ export default function PropertyCard({ property }: { property: Property }) {
 
   return (
     <article className="group overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-xl">
-      <div className="relative h-60 overflow-hidden">
+      <div className="relative h-48 overflow-hidden">
         <Image
           src={property.image}
           alt={property.title}
@@ -24,40 +24,40 @@ export default function PropertyCard({ property }: { property: Property }) {
         </div>
       </div>
 
-      <div className="p-6">
+      <div className="p-5">
         <p className="text-xs font-black uppercase tracking-[0.18em] text-[#0074B7]">
           {property.type}
         </p>
 
-        <h3 className="mt-2 text-2xl font-black leading-tight text-[#1E293B]">
+        <h3 className="mt-2 min-h-[60px] text-xl font-black leading-tight text-[#1E293B]">
           {property.title}
         </h3>
 
-        <p className="mt-3 text-sm font-semibold text-slate-500">
+        <p className="mt-2 text-sm font-semibold text-slate-500">
           {property.location}
         </p>
 
-        <p className="mt-4 text-xl font-black text-[#0074B7]">
+        <p className="mt-3 text-xl font-black text-[#0074B7]">
           {property.price}
         </p>
 
-        <div className="mt-5 grid grid-cols-3 gap-2 text-center text-xs font-bold text-slate-600">
-          <span className="rounded-md bg-[#F5F7FA] px-2 py-3">
+        <div className="mt-4 grid grid-cols-3 gap-2 text-center text-xs font-bold text-slate-600">
+          <span className="rounded-md bg-[#F5F7FA] px-2 py-2">
             {hasBeds ? `${property.beds} Beds` : "N/A"}
           </span>
 
-          <span className="rounded-md bg-[#F5F7FA] px-2 py-3">
+          <span className="rounded-md bg-[#F5F7FA] px-2 py-2">
             {hasBaths ? `${property.baths} Baths` : "N/A"}
           </span>
 
-          <span className="rounded-md bg-[#F5F7FA] px-2 py-3">
+          <span className="rounded-md bg-[#F5F7FA] px-2 py-2">
             {property.size}
           </span>
         </div>
 
         <Link
           href={`/properties/${property.id}`}
-          className="mt-6 inline-flex w-full justify-center rounded-md bg-[#003B5C] px-5 py-3 text-center text-sm font-black text-white transition hover:bg-[#008DD2]"
+          className="mt-4 inline-flex w-full justify-center rounded-md bg-[#003B5C] px-5 py-3 text-center text-sm font-black text-white transition hover:bg-[#008DD2]"
         >
           View Details
         </Link>
